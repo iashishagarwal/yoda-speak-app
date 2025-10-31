@@ -6,15 +6,9 @@ function yodaSpeak(sentence) {
   const firstHalf = words.slice(0, mid);
   const secondHalf = words.slice(mid);
 
-  const rearranged = `${secondHalf.join(' ')} ${firstHalf.join(' ')}, hmm.`;
-  const yodaPhrases = [
-    "The Force strong with this one, it is.",
-    "Much to learn, you still have.",
-    "Patience you must have, my young Padawan.",
-    "Do or do not. There is no try."
-  ];
-
-  return rearranged + " " + yodaPhrases[Math.floor(Math.random() * yodaPhrases.length)];
+  let rearranged = `${secondHalf.join(' ')} ${firstHalf.join(' ')}, hmm.`;
+  rearranged = rearranged.charAt(0).toUpperCase() + rearranged.slice(1);
+  return rearranged;
 }
 
 document.getElementById('translateBtn').addEventListener('click', () => {
